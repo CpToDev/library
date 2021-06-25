@@ -15,12 +15,12 @@ public class TransactionController {
 
     
     @PostMapping("/issueBook")
-    public void issueBook(@RequestParam("student_id")int student_id,@RequestParam("book_id") int book_id){
-        transactionService.issueBook(student_id,book_id);
+    public String issueBook(@RequestParam("student_id")int student_id,@RequestParam("book_id") int book_id) throws Exception {
+        return transactionService.issueBook(student_id,book_id);
     }
     @PostMapping("/returnBook")
-    public void returnBook(@RequestParam("student_id")int student_id,@RequestParam("book_id")int book_id){
-        transactionService.returnBook(student_id,book_id);
+    public String returnBook(@RequestParam("student_id")int student_id,@RequestParam("book_id")int book_id) throws Exception {
+        return transactionService.returnBook(student_id,book_id);
     }
 
 
